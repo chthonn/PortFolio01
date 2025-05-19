@@ -5,7 +5,7 @@ This site showcases my skills, projects, and the journey as a self-taught Full S
 
 ### 🔗 Live Site
 
-Check it out here: **[]**
+Check it out here: [Sunil Kumar](https://sunilk02.netlify.app)
 
 ---
 

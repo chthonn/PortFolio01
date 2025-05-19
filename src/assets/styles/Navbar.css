@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Labrada&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tillana&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+.navbar, 
+.navbar *,
+.navbar-nav,
+.navbar-nav *,
+.nav-link,
+.navbar-toggler,
+.logo,
+.logo-span,
+.responsive-navbar,
+#root .navbar,
+#root .navbar *,
+body .navbar,
+body .navbar * {
+    background-color: #5E81AC !important;
+}
+
+.navbar-toggler span {
+    background-color: #EBCB8B !important;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+    background-color: transparent !important;
+}
+
+.active-link {
+    color: #EBCB8B !important;
+    font-weight: bold;
+}
+
+.navbar {
+    width: calc(100% - 40px);
+    height: 60px;
+    background-color: #000 !important;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    transition: all 0.3s ease-out 0s;
+    padding: 0.5rem 2rem;
+    font-size: 1.3rem;
+    font-family: "Tillana", cursive;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.navbar a {
+    transition: color 0.3s ease;
+    background-color: #000;
+}
+
+.navbar-icons {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 2px;
+    margin-right: 5px;
+    background-color: #000;
+}
+
+.sticky {
+    transition: all 0.3s ease-out 0s;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    background-color: #000;
+}
+
+.navbar-toggler {
+    position: relative;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.navbar-toggler span {
+    display: block;
+    background-color: #EBCB8B; 
+    height: 4px;
+    width: 28px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    margin-right: 2rem;
+    transform: rotate(0deg);
+    left: 0;
+    opacity: 1;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: #000;
+}
+
+.navbar-toggler span:nth-child(1),
+.navbar-toggler span:nth-child(3) {
+    transition: transform 0.35s ease-in-out;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    transform: rotate(135deg);
+    opacity: 0.9;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+    height: 12px;
+    visibility: hidden;
+    background-color: transparent;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    transform: rotate(-135deg);
+    opacity: 0.9;
+}
+
+.my-logo-name {
+    position: relative;
+    top: 37px;
+    left: 50px;
+    background-color: #EBCB8B;
+    color: #000;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.logo {
+    font-family: "Allura", cursive;
+    font-weight: bolder;
+    color: #000;
+    background-color: #000;
+    font-size: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.logo-span {
+    color: #EBCB8B;
+    font-size: 24px;
+    font-family: "Kaushan Script", cursive;
+    letter-spacing: 1px;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    background-color: #000;
+}
+
+.navbar-nav .nav-link {
+    color: #ECEFF4;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background-color: #000;
+    font-weight: 900;
+    padding-right: 1rem !important;
+    padding-left: 1.5rem !important;
+}
+
+.navbar-nav .nav-link:hover {
+    cursor: pointer;
+    color: #EBCB8B;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transform: scale(1.05);
+    transition: transform 0.3s ease, color 0.3s ease;
+    background-color: #5E81AC;
+}
+
+.resumebtn {
+    margin-left: 30px;
+    border-radius: 25px;
+    padding: 0 18px;
+    font-family: "Philosopher", sans-serif;
+    border: none;
+    background-color: #EBCB8B; 
+    transition: background 0.3s ease;
+}
+
+
+.resume-title {
+    color: #ECEFF4;
+    font-weight: lighter;
+}
+
+.resume-title:hover {
+    cursor: pointer;
+    color: #2E3440;
+}
+
+@media (max-width: 767px) {
+    .navbar {
+       display: none;
+    }
+}

@@ -39,7 +39,7 @@ function HomePage() {
               <button
                 onClick={() => {
                   window.open(
-                    "https://www.linkedin.com/in/sunil-kumar-029697279/"
+                    "https://www.linkedin.com/in/shunnu"
                   );
                 }}
                 className="socailmediabtn"
@@ -47,7 +47,7 @@ function HomePage() {
                 <FaLinkedinIn className="icon-linkedin" />
               </button>
               <button className="socailmediabtn">
-                <a href="mailto:shunnu807@gmail.com">
+                <a href="mailto:skswork004@gmail.com">
                   <GrMail className="icon-mail" />
                 </a>
               </button>

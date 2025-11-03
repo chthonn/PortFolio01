@@ -33,7 +33,7 @@ function ProjectList() {
                 description="InfoSphere is a simple blog web application built with ReactJs and Firebase.
                 It allows users to create, read, and comment on posts. The posts and images are stored in Firebase, making it easy to scale and manage the app. 
                 The app is also responsive, which means it works well on all types of screens."
-                Demo="https://piedpiper01.netlify.app"
+                Demo="https://youtu.be/4VW-_Q6lwnM"
                 Code="https://github.com/0rigin-c0de/PiedPiper01"
               />
             </Col>

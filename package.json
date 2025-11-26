@@ -11,15 +11,18 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@gsap/react": "^2.1.2",
     "@heroicons/react": "^2.2.0",
-    "@tailwindcss/vite": "^4.1.6",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
     "bootstrap": "^5.3.6",
     "dotenv": "^16.5.0",
     "framer-motion": "^12.11.0",
     "github-calendar": "^2.3.4",
+    "gsap": "^3.13.0",
     "react": "^19.1.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0",
@@ -29,12 +32,14 @@
     "react-scroll": "^1.9.3",
     "react-spinners": "^0.17.0",
     "react-toastify": "^11.0.5",
-    "tailwindcss": "^4.1.6",
+    "tsparticles": "^3.9.1",
+    "tsparticles-slim": "^2.12.0",
     "typewriter-effect": "^2.22.0",
     "web-vitals": "^5.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
+    "@tailwindcss/vite": "^4.1.6",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
@@ -42,6 +47,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "tailwindcss": "^4.1.6",
     "vite": "^6.3.5"
   },
   "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"

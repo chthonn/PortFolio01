@@ -1,54 +1,79 @@
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import "../assets/styles/ProjectCard.css";
-import { FaCode, FaLink } from "react-icons/fa";
-function ProjectCard(props) {
+import { motion } from "framer-motion";
+import { FaCode, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+
+function ProjectCard({ imgPath, title, description, Demo, Code }) {
   return (
-    <Card className="project-card-view">
-      <div className="card-img-div">
-        <Card.Img
-          className="card-img shadow-inset-center"
-          variant="top"
-          src={props.imgPath}
-          alt="card-img"
-        />
+    <motion.div
+      className="project-card"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ y: -10 }}
+    >
+      <div className="project-image-wrapper">
+        <img src={imgPath} alt={title} className="project-image" />
+        <div className="project-overlay">
+          <div className="project-links">
+            {Demo && (
+              <motion.a
+                href={Demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link-btn"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <FaExternalLinkAlt />
+                <span>Live Demo</span>
+              </motion.a>
+            )}
+            {Code && (
+              <motion.a
+                href={Code}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link-btn"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <FaGithub />
+                <span>View Code</span>
+              </motion.a>
+            )}
+          </div>
+        </div>
       </div>
-      <Card.Body>
-        <Card.Title className="project-title">{props.title}</Card.Title>
-        <Card.Text
-          className="card-description"
-          style={{ textAlign: "justify" }}
-        >
-          {props.description}
-        </Card.Text>
-      </Card.Body>
-      <div className="button-groups">
-        {props.Demo ? (
-          <Button
-            className="viewbtn"
-            variant="primary"
-            href={props.Demo}
-            target="_blank"
-          >
-            Demo <FaLink className="btn-link" />
-          </Button>
-        ) : (
-          ""
-        )}
-        {props.Code ? (
-          <Button
-            className="viewbtn"
-            variant="primary"
-            href={props.Code}
-            target="_blank"
-          >
-            Code <FaCode className="btn-link" />
-          </Button>
-        ) : (
-          ""
-        )}
+      <div className="project-content">
+        <h3 className="project-title">{title}</h3>
+        <p className="project-description">{description}</p>
+        <div className="project-footer">
+          {Demo && (
+            <a
+              href={Demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-footer-link"
+            >
+              <FaExternalLinkAlt />
+              Demo
+            </a>
+          )}
+          {Code && (
+            <a
+              href={Code}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-footer-link"
+            >
+              <FaCode />
+              Code
+            </a>
+          )}
+        </div>
       </div>
-    </Card>
+    </motion.div>
   );
 }
+
 export default ProjectCard;

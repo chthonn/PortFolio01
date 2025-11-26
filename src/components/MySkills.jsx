@@ -1,4 +1,5 @@
-import "../assets/styles/MySkills.css";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaBootstrap,
   FaCss3Alt,
@@ -19,124 +20,156 @@ import {
   SiTypescript,
   SiVite,
   SiNextdotjs,
+  SiSupabase,
+  SiZapier,
+  SiRedis,
 } from "react-icons/si";
+import { HiCode } from "react-icons/hi";
+import { TbBrandFramerMotion } from "react-icons/tb";
+
+const skills = [
+  { icon: FaHtml5, name: "HTML5", color: "#e34c26", category: "Frontend" },
+  { icon: FaCss3Alt, name: "CSS3", color: "#264de4", category: "Frontend" },
+  { icon: FaJsSquare, name: "JavaScript", color: "#f7df1e", category: "Language" },
+  { icon: SiTypescript, name: "TypeScript", color: "#3178c6", category: "Language" },
+  { icon: FaBootstrap, name: "Bootstrap", color: "#7952b3", category: "Framework" },
+  { icon: SiTailwindcss, name: "TailwindCSS", color: "#06b6d4", category: "Framework" },
+  { icon: FaReact, name: "React.js", color: "#61dafb", category: "Framework" },
+  { icon: SiNextdotjs, name: "Next.js", color: "#000000", category: "Framework" },
+  { icon: SiVite, name: "Vite", color: "#646cff", category: "Tool" },
+  { icon: SiMarkdown, name: "Markdown", color: "#000000", category: "Tool" },
+  { icon: SiMongodb, name: "MongoDB", color: "#47a248", category: "Database" },
+  { icon: SiFirebase, name: "Firebase", color: "#ffca28", category: "Backend" },
+  { icon: SiExpress, name: "Express.js", color: "#000000", category: "Backend" },
+  { icon: FaNodeJs, name: "Node.js", color: "#339933", category: "Backend" },
+  { icon: FaGithubSquare, name: "GitHub", color: "#181717", category: "Tool" },
+  { icon: SiNetlify, name: "Netlify", color: "#00c7b7", category: "Tool" },
+  { icon: SiGit, name: "Git", color: "#f05032", category: "Tool" },
+  { icon: SiSupabase, name: "Supabase", color: "#3ecf8e", category: "Backend" },
+  { icon: SiZapier, name: "Zapier", color: "#ff4a00", category: "Tool" },
+  { icon: SiRedis, name: "Redis", color: "#dc382d", category: "Database" },
+];
+
+const categories = ["All", "Frontend", "Backend", "Language", "Framework", "Database", "Tool"];
 
 function MySkills() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredSkills =
+    selectedCategory === "All"
+      ? skills
+      : skills.filter((skill) => skill.category === selectedCategory);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+        delayChildren: 0.1,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        staggerChildren: 0.03,
+        staggerDirection: -1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut",
+      },
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.8,
+      y: -20,
+      transition: {
+        duration: 0.3,
+        ease: "easeIn",
+      },
+    },
+  };
+
   return (
-    <div className="skills-background">
+    <section className="skills-section" id="skills">
       <div className="skills-container">
-        <div className="skills-row">
-          {/* SKILLS SECTION */}
-          <div className="skills-column">
-            <div className="skills-title">My Skills</div>
-            <div className="skills-icons-container">
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <FaHtml5 className="html-icon" />
-                </div>
-                <div className="skills-name">HTML5</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <FaCss3Alt className="css-icon" />
-                </div>
-                <div className="skills-name">CSS3</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <FaJsSquare className="js-icon" />
-                </div>
-                <div className="skills-name">JavaScript</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <SiTypescript className="typescript-icon" />
-                </div>
-                <div className="skills-name">TypeScript</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <FaBootstrap className="bootstrap-icon" />
-                </div>
-                <div className="skills-name">Bootstrap</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <SiTailwindcss className="tailwind-icon" />
-                </div>
-                <div className="skills-name">TailwindCSS</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <FaReact className="react-icon" />
-                </div>
-                <div className="skills-name">React.js</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <SiNextdotjs className="nextjs-icon" />
-                </div>
-                <div className="skills-name">Next.js</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <SiVite className="vite-icon" />
-                </div>
-                <div className="skills-name">Vite</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <SiMarkdown className="markdwn-icon" />
-                </div>
-                <div className="skills-name">Markdown</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <SiMongodb className="mongodb-icon" />
-                </div>
-                <div className="skills-name">MongoDB</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <SiFirebase className="firebase-icon" />
-                </div>
-                <div className="skills-name">Firebase</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <SiExpress className="express-icon" />
-                </div>
-                <div className="skills-name">Express.js</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <FaNodeJs className="node-icon" />
-                </div>
-                <div className="skills-name">Node.js</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <FaGithubSquare className="github-icon" />
-                </div>
-                <div className="skills-name">GitHub</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <SiNetlify className="netlify-icon" />
-                </div>
-                <div className="skills-name">Netlify</div>
-              </div>
-              <div className="skills-card">
-                <div className="skills-icon">
-                  <SiGit className="git-icon" />
-                </div>
-                <div className="skills-name">Git</div>
-              </div>
-            </div>
+        <motion.div
+          className="skills-header"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="section-title">
+            <HiCode className="section-icon" />
+            <h2>My Skills</h2>
           </div>
-        </div>
+          <p className="section-subtitle">
+            Technologies and tools I work with
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="category-filters"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          {categories.map((category) => (
+            <motion.button
+              key={category}
+              className={`category-filter ${selectedCategory === category ? "active" : ""}`}
+              onClick={() => setSelectedCategory(category)}
+              whileHover={{ scale: 1.08, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              {category}
+            </motion.button>
+          ))}
+        </motion.div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selectedCategory}
+            className="skills-grid"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
+            {filteredSkills.map((skill) => (
+              <motion.div
+                key={skill.name}
+                className="skill-card"
+                variants={itemVariants}
+                whileHover={{ scale: 1.1, y: -10, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                style={{ "--skill-color": skill.color }}
+              >
+                <div className="skill-icon-wrapper">
+                  <skill.icon className="skill-icon" />
+                  <div className="skill-glow" style={{ backgroundColor: skill.color }}></div>
+                </div>
+                <div className="skill-name">{skill.name}</div>
+                <div className="skill-category">{skill.category}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
-    </div>
+    </section>
   );
 }
 

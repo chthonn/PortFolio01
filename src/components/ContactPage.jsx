@@ -31,7 +31,7 @@ function ContactPage() {
       icon: IoLogoWhatsapp,
       label: "WhatsApp",
       value: "+91 6006280992",
-      link: "https://wa.me/6006280992",
+      link: "https://wa.me/916006280992",
       color: "#25d366",
     },
     {
@@ -114,7 +114,7 @@ function ContactPage() {
                 ))}
               </div>
               <motion.a
-                href="https://wa.me/6006280992"
+                href="https://wa.me/916006280992"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whatsapp-btn"

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { HiBriefcase } from "react-icons/hi";
 import { FaCode, FaLaptopCode, FaExternalLinkAlt } from "react-icons/fa";
+import "../assets/styles/WorkExperience.css";
 
 const experiences = [
   {
@@ -141,3 +142,4 @@ function WorkExperience() {
 }
 
 export default WorkExperience;
+

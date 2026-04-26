@@ -11,18 +11,10 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('dark');
-
-  useEffect(() => {
+  const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      return;
-    }
-
-    document.documentElement.setAttribute('data-theme', 'dark');
-  }, []);
+    return savedTheme || 'dark';
+  });
 
   useEffect(() => {
     localStorage.setItem('theme', theme);
@@ -39,3 +31,4 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
+

@@ -9,8 +9,13 @@ import WorkExperience from "../components/WorkExperience";
 import ContactPage from "../components/ContactPage";
 import { Element } from "react-scroll";
 import arrowImage from "../assets/images/arrow.png";
-
-const getImageSrc = (image) => image?.src ?? image;
+import "../assets/styles/Navbar.css";
+import "../assets/styles/HomePage.css";
+import "../assets/styles/AboutPage.css";
+import "../assets/styles/MySkills.css";
+import "../assets/styles/ProjectCard.css";
+import "../assets/styles/ContactPage.css";
+import "./Home.css";
 
 const container = {
   hidden: { opacity: 0 },
@@ -24,8 +29,8 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
+  show: { 
+    opacity: 1, 
     y: 0,
     transition: {
       type: "spring",
@@ -110,7 +115,7 @@ const Home = () => {
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <img src={getImageSrc(arrowImage)} alt="Scroll to top" className="scroll-icon" />
+            <img src={arrowImage} alt="Scroll to top" className="scroll-icon" />
           </motion.button>
         )}
       </AnimatePresence>

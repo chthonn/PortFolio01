@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { FaCode, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
+const getImageSrc = (image) => image?.src ?? image;
+
 function ProjectCard({ imgPath, title, description, Demo, Code }) {
   return (
     <motion.div
@@ -12,7 +14,7 @@ function ProjectCard({ imgPath, title, description, Demo, Code }) {
       whileHover={{ y: -10 }}
     >
       <div className="project-image-wrapper">
-        <img src={imgPath} alt={title} className="project-image" />
+        <img src={getImageSrc(imgPath)} alt={title} className="project-image" />
         <div className="project-overlay">
           <div className="project-links">
             {Demo && (

@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "start": "next start",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "next start"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -20,35 +21,34 @@
     "@tsparticles/slim": "^3.9.1",
     "bootstrap": "^5.3.6",
     "dotenv": "^16.5.0",
-    "framer-motion": "^12.11.0",
+    "framer-motion": "^12.12.1",
     "github-calendar": "^2.3.4",
     "gsap": "^3.13.0",
-    "react": "^19.1.0",
+    "next": "^16.2.4",
+    "react": "^19.2.5",
     "react-bootstrap": "^2.10.10",
-    "react-dom": "^19.1.0",
+    "react-dom": "^19.2.5",
     "react-icons": "^5.5.0",
     "react-loader-spinner": "^6.1.6",
-    "react-router-dom": "^7.6.0",
     "react-scroll": "^1.9.3",
     "react-spinners": "^0.17.0",
     "react-toastify": "^11.0.5",
     "tsparticles": "^3.9.1",
     "tsparticles-slim": "^2.12.0",
     "typewriter-effect": "^2.22.0",
-    "web-vitals": "^5.0.0"
+    "web-vitals": "^5.0.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.25.0",
-    "@tailwindcss/vite": "^4.1.6",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "@vitejs/plugin-react": "^4.4.1",
-    "eslint": "^9.25.0",
+    "@eslint/js": "^9.27.0",
+    "@tailwindcss/postcss": "^4.2.4",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "eslint": "^9.27.0",
+    "eslint-config-next": "^16.2.4",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
-    "tailwindcss": "^4.1.6",
-    "vite": "^6.3.5"
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.1.0",
+    "tailwindcss": "^4.1.7"
   },
   "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }

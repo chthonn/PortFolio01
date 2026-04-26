@@ -8,6 +8,8 @@ import {
 import { HiArrowDown } from "react-icons/hi";
 import heroImage from "../assets/images/img.png";
 
+const getImageSrc = (image) => image?.src ?? image;
+
 function HomePage() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -174,7 +176,7 @@ function HomePage() {
             >
               <div className="hero-image-wrapper">
                 <div className="hero-image-blob">
-                  <img src={heroImage} alt="Sunil Kumar" className="hero-image" />
+                  <img src={getImageSrc(heroImage)} alt="Sunil Kumar" className="hero-image" />
                 </div>
                 <div className="hero-image-glow"></div>
               </div>

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import { HiBriefcase } from "react-icons/hi";
-import "../assets/styles/ProjectList.css";
 import Project1 from "../assets/images/projct1.png";
 import Project2 from "../assets/images/Project1.png";
 import Project3 from "../assets/images/Project2.png";

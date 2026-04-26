@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "../contexts/ThemeContext";
 import { Link } from "react-scroll";
-import '../assets/styles/Navbar.css';
 import {
   HiHome,
   HiUser,

@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import './AnimatedBackground.css';
 
 const AnimatedBackground = () => {
   const canvasRef = useRef(null);
@@ -123,4 +122,3 @@ const AnimatedBackground = () => {
 };
 
 export default AnimatedBackground;
-

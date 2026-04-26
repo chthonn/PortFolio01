@@ -1,8 +1,7 @@
-import "./App.css";
-import Home from "./pages/Home";
-import { BrowserRouter } from "react-router-dom";
+"use client";
+
+import Home from "./views/Home";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import AnimatedBackground from "./components/AnimatedBackground";
 
@@ -24,9 +23,7 @@ function App() {
           theme="dark"
           className="toast-container"
         />
-        <BrowserRouter>
-          <Home />
-        </BrowserRouter>
+        <Home />
       </div>
     </ThemeProvider>
   );

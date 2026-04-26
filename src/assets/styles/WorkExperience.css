@@ -1,11 +1,11 @@
 .experience-section {
-  padding: 8rem 2rem;
+  padding: var(--section-space-y) var(--page-gutter);
   position: relative;
   background: transparent;
 }
 
 .experience-container {
-  max-width: 1400px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
 }
 
@@ -69,7 +69,7 @@
   margin-bottom: 4rem;
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: clamp(1.5rem, 3vw, 3rem);
 }
 
 .timeline-item-left {
@@ -156,7 +156,7 @@
   padding: 2.5rem;
   position: relative;
   transition: var(--transition-spring);
-  max-width: 500px;
+  max-width: min(100%, 500px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
@@ -301,13 +301,14 @@
   }
 
   .timeline-line {
-    left: 2rem;
+    left: 1.625rem;
   }
 
   .timeline-item {
     flex-direction: row !important;
-    gap: 2rem;
-    padding-left: 4rem;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding-left: 3.5rem;
   }
 
   .timeline-node-wrapper {
@@ -334,9 +335,18 @@
     padding: 4rem 1rem;
   }
 
+  .timeline-wrapper {
+    padding-top: 3rem;
+  }
+
+  .timeline-line {
+    left: 1.4rem;
+  }
+
   .timeline-item {
-    padding-left: 3rem;
-    gap: 1.5rem;
+    padding-left: 2.75rem;
+    gap: 1rem;
+    margin-bottom: 3rem;
   }
 
   .timeline-node {
@@ -352,6 +362,11 @@
     padding: 2rem 1.5rem;
   }
 
+  .timeline-date {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+  }
+
   .experience-title {
     font-size: 1.375rem;
   }
@@ -365,4 +380,3 @@
     padding-left: 1.25rem;
   }
 }
-

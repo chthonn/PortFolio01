@@ -1,5 +1,5 @@
 .project-section {
-  padding: 8rem 2rem;
+  padding: var(--section-space-y) var(--page-gutter);
   position: relative;
   background: transparent;
   overflow: hidden;
@@ -20,7 +20,7 @@
 }
 
 .project-container {
-  max-width: 1400px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -51,7 +51,7 @@
   }
 
   .projects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
   }
 }

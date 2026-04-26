@@ -19,6 +19,9 @@
   --radius-lg: 20px;
   --radius-xl: 28px;
   --radius-full: 9999px;
+  --content-max-width: 1400px;
+  --page-gutter: clamp(1rem, 2vw, 2rem);
+  --section-space-y: clamp(4.5rem, 7vw, 8rem);
 }
 
 [data-theme="dark"] {
@@ -97,6 +100,16 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
   line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+img,
+svg,
+canvas {
+  max-width: 100%;
 }
 
 code {

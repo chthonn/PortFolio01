@@ -1,15 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "../contexts/ThemeContext";
+import { useTheme } from "../contexts/theme";
 import { Link } from "react-scroll";
-import '../assets/styles/Navbar.css';
 import {
-  HiHome,
-  HiUser,
-  HiCode,
-  HiBriefcase,
-  HiOfficeBuilding,
-  HiMail,
   HiSun,
   HiMoon,
   HiMenu,
@@ -31,12 +24,12 @@ function Header() {
   }, []);
 
   const navItems = [
-    { to: "home", icon: HiHome, label: "Home" },
-    { to: "about", icon: HiUser, label: "About" },
-    { to: "skills", icon: HiCode, label: "Skills" },
-    { to: "experience", icon: HiOfficeBuilding, label: "Experience" },
-    { to: "projects", icon: HiBriefcase, label: "Projects" },
-    { to: "contact", icon: HiMail, label: "Contact" },
+    { to: "home", label: "Home" },
+    { to: "about", label: "About" },
+    { to: "skills", label: "Skills" },
+    { to: "experience", label: "Experience" },
+    { to: "projects", label: "Projects" },
+    { to: "contact", label: "Contact" },
   ];
 
   const handleResumeClick = () => {
@@ -48,24 +41,28 @@ function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`navbar ${isScrolled ? "navbar-scrolled" : ""}`}
+      className={`sticky top-0 z-50 border-b transition-all duration-300 ${
+        isScrolled
+          ? "border-[#d8cfc3] bg-[#f0ece4]/94 backdrop-blur-md dark:border-[#f0ece4]/10 dark:bg-[#151311]/94"
+          : "border-[#81766b]/15 bg-[#f0ece4]/92 backdrop-blur-sm dark:border-[#f0ece4]/10 dark:bg-[#151311]/92"
+      }`}
     >
-      <div className="navbar-container">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
         <motion.div
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ y: -1 }}
           whileTap={{ scale: 0.95 }}
-          className="navbar-brand"
+          className="cursor-pointer"
         >
           <Link to="home" smooth={true} duration={500} offset={-50}>
-            <div className="brand-wrapper">
-              <div className="brand-icon">
+            <div className="flex items-center gap-3">
+              <div className="grid h-9 w-9 place-items-center rounded-full border border-[#81766b]/25 bg-[#f8f4ec] text-[#b65b3a] dark:border-[#f0ece4]/15 dark:bg-[#1f1b17]">
                 <svg
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="brand-svg"
+                  className="h-4 w-4"
                 >
                   <path
                     d="M12 2L2 7L12 12L22 7L12 2Z"
@@ -90,17 +87,15 @@ function Header() {
                   />
                 </svg>
               </div>
-              <span className="brand-text">
-                <span className="brand-accent brand-bracket">&lt;</span>
-                <span className="brand-name">SUNIL</span>
-                <span className="brand-accent brand-bracket">/&gt;</span>
+              <span className="flex flex-col leading-none">
+                <span className="text-base font-bold tracking-tight text-[#151311] dark:text-[#f0ece4]">Sunil Kumar</span>
+                <span className="mt-1 font-mono text-[10px] uppercase tracking-[0.22em] text-[#81766b] dark:text-[#c9b99a]">Full Stack Developer</span>
               </span>
-              <div className="brand-dot"></div>
             </div>
           </Link>
         </motion.div>
 
-        <div className="navbar-desktop">
+        <div className="hidden items-center gap-8 lg:flex">
           {navItems.map((item, index) => (
             <motion.div
               key={item.to}
@@ -115,27 +110,30 @@ function Header() {
                 duration={500}
                 offset={-50}
                 activeClass="active"
-                className="nav-link"
+                className="relative cursor-pointer py-2 text-sm font-medium text-[#6f665e] transition-colors hover:text-[#151311] dark:text-[#c9b99a] dark:hover:text-[#f0ece4] [&.active]:text-[#151311] dark:[&.active]:text-[#f0ece4] [&.active]:after:absolute [&.active]:after:bottom-0 [&.active]:after:left-0 [&.active]:after:h-px [&.active]:after:w-full [&.active]:after:bg-[#E54D26]"
               >
-                <item.icon className="nav-icon" />
                 <span>{item.label}</span>
               </Link>
             </motion.div>
           ))}
         </div>
 
-        <div className="navbar-actions">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="hidden font-mono text-[11px] uppercase tracking-[0.18em] text-[#81766b] xl:block dark:text-[#c9b99a]">
+            India · IST
+          </div>
+
           <motion.button
-            whileHover={{ scale: 1.1, rotate: 180 }}
+            whileHover={{ y: -1 }}
             whileTap={{ scale: 0.9 }}
             onClick={toggleTheme}
-            className="theme-toggle"
+            className="grid h-10 w-10 place-items-center border border-[#d8cfc3] bg-transparent text-[#6f665e] transition-colors hover:border-[#151311] hover:text-[#151311] dark:border-[#f0ece4]/15 dark:text-[#f0ece4]"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? (
-              <HiSun className="theme-icon" />
+              <HiSun className="h-5 w-5" />
             ) : (
-              <HiMoon className="theme-icon" />
+              <HiMoon className="h-5 w-5" />
             )}
           </motion.button>
 
@@ -143,16 +141,16 @@ function Header() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleResumeClick}
-            className="resume-btn"
+            className="hidden items-center gap-2 border border-[#151311] bg-transparent px-5 py-2.5 text-sm font-semibold text-[#151311] transition-colors hover:bg-[#151311] hover:text-[#f0ece4] sm:flex dark:border-[#f0ece4] dark:text-[#f0ece4] dark:hover:bg-[#f0ece4] dark:hover:text-[#151311]"
           >
-            <AiFillFilePdf className="resume-icon" />
+            <AiFillFilePdf className="h-4 w-4" />
             <span>Resume</span>
           </motion.button>
 
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="mobile-menu-toggle"
+            className="grid h-10 w-10 place-items-center border border-[#d8cfc3] bg-transparent text-xl text-[#151311] lg:hidden dark:border-[#f0ece4]/15 dark:text-[#f0ece4]"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <HiX /> : <HiMenu />}
@@ -167,7 +165,7 @@ function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="mobile-menu"
+            className="border-t border-[#d8cfc3] bg-[#f0ece4]/95 px-5 py-3 backdrop-blur-md lg:hidden dark:border-[#f0ece4]/10 dark:bg-[#151311]/95"
           >
             {navItems.map((item) => (
               <Link
@@ -178,10 +176,9 @@ function Header() {
                 duration={500}
                 offset={-50}
                 activeClass="active"
-                className="mobile-nav-link"
+                className="flex cursor-pointer border-b border-[#81766b]/15 py-3 font-mono text-xs uppercase tracking-[0.16em] text-[#6f665e] last:border-b-0 hover:text-[#b65b3a] dark:border-[#f0ece4]/10 dark:text-[#d8cfc3] dark:hover:text-[#d4622a]"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <item.icon className="mobile-nav-icon" />
                 <span>{item.label}</span>
               </Link>
             ))}

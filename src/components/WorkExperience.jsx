@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import { HiBriefcase } from "react-icons/hi";
 import { FaCode, FaLaptopCode, FaExternalLinkAlt } from "react-icons/fa";
-import "../assets/styles/WorkExperience.css";
 
 const experiences = [
   {
@@ -61,74 +59,75 @@ function WorkExperience() {
   };
 
   return (
-    <section className="experience-section" id="experience">
-      <div className="experience-container">
+    <section className="px-5 py-20 sm:px-8 lg:px-10" id="experience">
+      <div className="mx-auto max-w-7xl">
         <motion.div
-          className="experience-header"
+          className="mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="section-title">
-            <HiBriefcase className="section-icon" />
-            <h2>Work Experience</h2>
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#81766b] dark:text-[#c9b99a]">
+            03 / Work / Experience
           </div>
-          <p className="section-subtitle">
+          <h2 className="mt-5 max-w-3xl text-4xl font-black leading-[0.95] tracking-tight text-[#151311] sm:text-5xl dark:text-[#f0ece4]">
+            Startup work across frontend systems and AI workflows.
+          </h2>
+          <p className="mt-5 max-w-2xl font-mono text-xs uppercase tracking-[0.18em] text-[#81766b] dark:text-[#c9b99a]">
             My professional journey and contributions
           </p>
         </motion.div>
 
         <motion.div
-          className="timeline-wrapper"
+          className="relative space-y-8 border-l border-dashed border-[#81766b]/35 pl-6 md:pl-10 dark:border-[#f0ece4]/15"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <div className="timeline-line"></div>
-          
           {experiences.map((experience, index) => {
             const IconComponent = experience.icon;
             return (
               <motion.div
                 key={index}
-                className={`timeline-item timeline-item-${experience.side}`}
+                className="relative"
                 variants={itemVariants}
               >
-                <div className="timeline-node-wrapper">
-                  <div className="timeline-date">{experience.dateRange}</div>
-                  <div className="timeline-node">
-                    <IconComponent className="timeline-icon" />
-                  </div>
+                <div className="absolute -left-[43px] top-1 grid h-8 w-8 place-items-center border border-[#81766b]/35 bg-[#f8f4ec] text-[#b65b3a] shadow-[2px_2px_0_rgba(139,115,85,0.2)] md:-left-[57px] dark:border-[#f0ece4]/15 dark:bg-[#1f1b17] dark:text-[#d4622a]">
+                  <IconComponent className="h-4 w-4" />
                 </div>
                 
                 <motion.div
-                  className="timeline-content"
-                  whileHover={{ scale: 1.02, y: -5 }}
+                  className="border border-[#81766b]/25 bg-[#f8f4ec]/75 p-5 shadow-[5px_5px_0_rgba(139,115,85,0.12)] sm:p-6 dark:border-[#f0ece4]/12 dark:bg-[#1f1b17]/75 dark:shadow-[5px_5px_0_rgba(245,240,232,0.04)]"
+                  whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="experience-header-content">
-                    <h3 className="experience-title">{experience.title}</h3>
-                    <div className="experience-meta">
+                  <div>
+                    <div className="mb-3 font-mono text-[11px] uppercase tracking-[0.16em] text-[#81766b] dark:text-[#c9b99a]">{experience.dateRange}</div>
+                    <h3 className="text-2xl font-bold leading-tight text-[#151311] dark:text-[#f0ece4]">{experience.title}</h3>
+                    <div className="mt-2 flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-[#81766b] dark:text-[#c9b99a]">
                       <a 
                         href={experience.companyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="experience-company-link"
+                        className="inline-flex items-center gap-2 text-[#b65b3a] hover:underline dark:text-[#d4622a]"
                       >
-                        <span className="experience-company">{experience.company}</span>
-                        <FaExternalLinkAlt className="company-link-icon" />
+                        <span>{experience.company}</span>
+                        <FaExternalLinkAlt className="h-3 w-3" />
                       </a>
-                      <span className="experience-separator">•</span>
-                      <span className="experience-type">{experience.type}</span>
+                      <span>•</span>
+                      <span>{experience.type}</span>
                     </div>
-                    <div className="experience-location">{experience.location}</div>
+                    <div className="mt-2 text-sm text-[#6f665e] dark:text-[#d8cfc3]">{experience.location}</div>
                   </div>
                   
-                  <ul className="experience-description">
+                  <ul className="mt-5 space-y-3 text-sm leading-6 text-[#6f665e] dark:text-[#d8cfc3]">
                     {experience.description.map((point, idx) => (
-                      <li key={idx}>{point}</li>
+                      <li key={idx} className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b65b3a] dark:bg-[#d4622a]" />
+                        <span>{point}</span>
+                      </li>
                     ))}
                   </ul>
                 </motion.div>
@@ -142,4 +141,3 @@ function WorkExperience() {
 }
 
 export default WorkExperience;
-

@@ -1,71 +1,42 @@
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
-import { HiBriefcase } from "react-icons/hi";
-import "../assets/styles/ProjectList.css";
-import Project1 from "../assets/images/projct1.png";
-import Project2 from "../assets/images/Project1.png";
-import Project3 from "../assets/images/Project2.png";
-import Project4 from "../assets/images/Project3.png";
-import Project5 from "../assets/images/Project4.png";
-import Project6 from "../assets/images/Project5.png";
-import Project7 from "../assets/images/Project6.png";
 
 const projects = [
   {
-    imgPath: Project1,
     title: "PiperChat",
     description:
-      "Utilized the MERN (MongoDB, Express, React, Node.js) stack to build DISCORD CLONE from scratch. Developed features like Create Servers, Create Channels, and giving users the ability to create and manage their own chat servers.",
+      "Built a Discord-style chat platform using React, Tailwind, Node.js, Express, MongoDB, and Socket.IO. Implemented servers, channels, realtime messaging, auth flows, and robust socket event handling.",
     Demo: "https://www.youtube.com/watch?v=eX9f0HHp65k",
     Code: "https://github.com/0rigin-c0de/PiperChat01",
+    technologies: ["Node.js", "React", "MongoDB", "Socket.IO", "Tailwind", "Supabase"],
+    highlights: ["Realtime messaging", "Servers & channels", "Socket.IO events", "JWT auth"],
   },
   {
-    imgPath: Project2,
-    title: "InfoSphere Blog Website",
+    title: "VotingApp",
     description:
-      "InfoSphere is a simple blog web application built with ReactJs and Firebase. It allows users to create, read, and comment on posts. The posts and images are stored in Firebase, making it easy to scale and manage the app.",
-    Demo: "https://youtu.be/4VW-_Q6lwnM",
-    Code: "https://github.com/0rigin-c0de/PiedPiper01",
+      "A secure online voting system built with Node.js, Express, MongoDB (Mongoose), Redis, and Socket.IO. Features JWT authentication, bcrypt password hashing, Aadhaar-based signup, role-based access control, audit-ready records, and one-vote-per-user logic.",
+    Demo: "",
+    Code: "#",
+    technologies: ["Node.js", "Express", "MongoDB", "Redis", "Socket.IO", "JWT"],
+    highlights: ["Secure voting", "Role-based access", "Real-time vote updates", "Audit-ready records"],
   },
   {
-    imgPath: Project3,
-    title: "Foodie Restaurant Website Template",
+    title: "AnchorDocs RAG",
     description:
-      "Foodie is a responsive and visually appealing restaurant website template built with React. It provides an interactive interface for showcasing delicious food items, ordering food, and learning more about the restaurant's services.",
-    Demo: "https://foodie01.netlify.app/",
-    Code: "https://github.com/0rigin-c0de/Foodie",
+      "Local RAG system for QA over documents using TypeScript, Node.js, Express, Ollama, and ChromaDB. Implemented document ingestion, chunking, embedding generation, hybrid retrieval (vector search + BM25), cross-encoder reranking, and CLI/API workflows.",
+    Demo: "",
+    Code: "#",
+    technologies: ["TypeScript", "Node.js", "Express", "ChromaDB", "Ollama", "BM25"],
+    highlights: ["Document ingestion", "Vector search + BM25", "Cross-encoder reranking", "Citation-based answers"],
   },
   {
-    imgPath: Project4,
-    title: "MERN Auth App",
+    title: "Reactron",
     description:
-      "This MERN app is a secure and user-friendly system for authentication, registration, and profile management. It features a backend API built with Express and MongoDB, with protected routes and JWT authentication stored in HTTP-only cookies.",
-    Demo: "https://github.com/0rigin-c0de/mern-auth",
-    Code: "https://github.com/0rigin-c0de/mern-auth",
-  },
-  {
-    imgPath: Project5,
-    title: "Wiki Viewer",
-    description:
-      "Wiki Viewer is a web app that allows users to search for and view Wikipedia articles. The app uses the Wikipedia API to fetch article data, and it is built with HTML, CSS, and JavaScript. The app also has a random wiki generated button.",
-    Demo: "https://wikiviewer01.netlify.app/",
-    Code: "https://github.com/0rigin-c0de/wiki-veiwer",
-  },
-  {
-    imgPath: Project6,
-    title: "Snake-Game Java",
-    description:
-      "The Snake Game is a classic arcade-style game built in Java. It features a snake controlled by the player, moving within a grid to eat apples. The objective is to avoid collisions with the boundaries or the snake's body.",
-    Demo: "https://github.com/0rigin-c0de/snake-Game",
-    Code: "https://github.com/0rigin-c0de/snake-Game",
-  },
-  {
-    imgPath: Project7,
-    title: "Note-Taking App",
-    description:
-      "The Notes App is a React JS and Firebase web application that allows users to create, edit, and manage notes. It features a markdown editor for formatting and previewing notes. The sidebar displays a list of notes, and users can create, delete, and sign out.",
-    Demo: "https://github.com/0rigin-c0de/Markdown-App-",
-    Code: "https://github.com/0rigin-c0de/Markdown-App-",
+      "A blog application with a custom backend built using Node.js and Express. Built CRUD operations for users and posts, secure profile management, and performance/security optimizations.",
+    Demo: "",
+    Code: "#",
+    technologies: ["React", "Node.js", "Express", "MongoDB"],
+    highlights: ["Custom backend", "CRUD operations", "User profiles", "Security optimizations"],
   },
 ];
 
@@ -81,26 +52,28 @@ function ProjectList() {
   };
 
   return (
-    <section className="project-section" id="projects">
-      <div className="project-container">
+    <section className="px-5 py-20 sm:px-8 lg:px-10" id="projects">
+      <div className="mx-auto max-w-7xl">
         <motion.div
-          className="project-header"
+          className="mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="section-title">
-            <HiBriefcase className="section-icon" />
-            <h2>My Projects</h2>
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#81766b] dark:text-[#c9b99a]">
+            04 / Selected / Projects
           </div>
-          <p className="section-subtitle">
+          <h2 className="mt-5 max-w-3xl text-4xl font-black leading-[0.95] tracking-tight text-[#151311] sm:text-5xl dark:text-[#f0ece4]">
+            Projects that show the stack in motion.
+          </h2>
+          <p className="mt-5 max-w-2xl font-mono text-xs uppercase tracking-[0.18em] text-[#81766b] dark:text-[#c9b99a]">
             A collection of my recent work and side projects
           </p>
         </motion.div>
 
         <motion.div
-          className="projects-grid"
+          className="divide-y divide-[#d8cfc3] border-y border-[#d8cfc3] dark:divide-[#f0ece4]/10 dark:border-[#f0ece4]/10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -109,14 +82,27 @@ function ProjectList() {
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
-              imgPath={project.imgPath}
+              index={index + 1}
               title={project.title}
               description={project.description}
               Demo={project.Demo}
               Code={project.Code}
+              technologies={project.technologies}
+              highlights={project.highlights}
             />
           ))}
         </motion.div>
+
+        <div className="mt-8 flex justify-center">
+          <a
+            href="https://github.com/0rigin-c0de?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 border border-[#151311] dark:border-[#f0ece4] text-[#151311] dark:text-[#f0ece4] hover:bg-[#151311] hover:text-white dark:hover:bg-[#f0ece4] dark:hover:text-[#151311] font-medium text-sm rounded"
+          >
+            More projects on GitHub
+          </a>
+        </div>
       </div>
     </section>
   );

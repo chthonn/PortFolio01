@@ -9,13 +9,6 @@ import WorkExperience from "../components/WorkExperience";
 import ContactPage from "../components/ContactPage";
 import { Element } from "react-scroll";
 import arrowImage from "../assets/images/arrow.png";
-import "../assets/styles/Navbar.css";
-import "../assets/styles/HomePage.css";
-import "../assets/styles/AboutPage.css";
-import "../assets/styles/MySkills.css";
-import "../assets/styles/ProjectCard.css";
-import "../assets/styles/ContactPage.css";
-import "./Home.css";
 
 const container = {
   hidden: { opacity: 0 },
@@ -60,44 +53,44 @@ const Home = () => {
 
   return (
     <motion.div
-      className="home-wrapper"
+      className="relative z-10 min-h-screen"
       initial="hidden"
       animate="show"
       variants={container}
     >
       <Header />
 
-      <Element name="home" className="element">
+      <Element name="home" className="relative">
         <motion.div variants={item}>
           <HomePage />
         </motion.div>
       </Element>
 
-      <Element name="about" className="element">
+      <Element name="about" className="relative">
         <motion.div variants={item}>
           <AboutPage />
         </motion.div>
       </Element>
 
-      <Element name="skills" className="element">
+      <Element name="skills" className="relative">
         <motion.div variants={item}>
           <MySkills />
         </motion.div>
       </Element>
 
-      <Element name="experience" className="element">
+      <Element name="experience" className="relative">
         <motion.div variants={item}>
           <WorkExperience />
         </motion.div>
       </Element>
 
-      <Element name="projects" className="element">
+      <Element name="projects" className="relative">
         <motion.div variants={item}>
           <ProjectList />
         </motion.div>
       </Element>
 
-      <Element name="contact" className="element">
+      <Element name="contact" className="relative">
         <motion.div variants={item}>
           <ContactPage />
         </motion.div>
@@ -106,7 +99,7 @@ const Home = () => {
       <AnimatePresence>
         {showScrollButton && (
           <motion.button
-            className="scroll-to-top"
+            className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[#151311]/15 bg-[#E54D26] shadow-[4px_4px_0_rgba(26,22,18,0.22)] transition-colors hover:bg-[#c43d1a] dark:border-[#f0ece4]/15 dark:shadow-[4px_4px_0_rgba(245,240,232,0.14)]"
             onClick={scrollToTop}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -115,7 +108,7 @@ const Home = () => {
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <img src={arrowImage} alt="Scroll to top" className="scroll-icon" />
+            <img src={arrowImage} alt="Scroll to top" className="h-5 w-5 object-contain invert" />
           </motion.button>
         )}
       </AnimatePresence>

@@ -11,6 +11,6 @@ Check it out here: [Sunil Kumar](https://sunilk02.netlify.app)
 
 ### 📫 Connect With Me
 
-- GitHub: [@0rigin-c0de](https://github.com/0rigin-c0de)
+- GitHub: [@chthonn](https://github.com/chthonn)
 - LinkedIn: [Sunil Kumar](https://www.linkedin.com/in/shunnu)
 - Email: [Sunil Kumar](mailto:skswork002@gmail.com)

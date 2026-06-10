@@ -208,7 +208,7 @@ function ContactPage() {
             <span className="font-semibold tracking-[0.22em] text-[#151311] dark:text-[#f0ece4]">Sunil Kumar</span>
           </p>
           <div className="hidden justify-end gap-4 sm:flex">
-            <a href="https://github.com/0rigin-c0de" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#b65b3a] dark:hover:text-[#d4622a]">
+            <a href="https://github.com/chthonn" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#b65b3a] dark:hover:text-[#d4622a]">
               GitHub
             </a>
             <a href="https://www.linkedin.com/in/shunnu" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#b65b3a] dark:hover:text-[#d4622a]">

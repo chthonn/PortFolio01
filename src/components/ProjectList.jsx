@@ -7,7 +7,7 @@ const projects = [
     description:
       "Built a Discord-style chat platform using React, Tailwind, Node.js, Express, MongoDB, and Socket.IO. Implemented servers, channels, realtime messaging, auth flows, and robust socket event handling.",
     Demo: "https://www.youtube.com/watch?v=eX9f0HHp65k",
-    Code: "https://github.com/0rigin-c0de/PiperChat01",
+    Code: "https://github.com/chthonn/PiperChat01",
     technologies: ["Node.js", "React", "MongoDB", "Socket.IO", "Tailwind", "Supabase"],
     highlights: ["Realtime messaging", "Servers & channels", "Socket.IO events", "JWT auth"],
   },
@@ -16,7 +16,7 @@ const projects = [
     description:
       "A secure online voting system built with Node.js, Express, MongoDB (Mongoose), Redis, and Socket.IO. Features JWT authentication, bcrypt password hashing, Aadhaar-based signup, role-based access control, audit-ready records, and one-vote-per-user logic.",
     Demo: "",
-    Code: "https://github.com/0rigin-c0de/VotingApp",
+    Code: "https://github.com/chthonn/VotingApp",
     technologies: ["Node.js", "Express", "MongoDB", "Redis", "Socket.IO", "JWT"],
     highlights: ["Secure voting", "Role-based access", "Real-time vote updates", "Audit-ready records"],
   },
@@ -25,7 +25,7 @@ const projects = [
     description:
       "Local RAG system for QA over documents using TypeScript, Node.js, Express, Ollama, and ChromaDB. Implemented document ingestion, chunking, embedding generation, hybrid retrieval (vector search + BM25), cross-encoder reranking, and CLI/API workflows.",
     Demo: "",
-    Code: "https://github.com/0rigin-c0de/AnchorDocs",
+    Code: "https://github.com/chthonn/AnchorDocs",
     technologies: ["TypeScript", "Node.js", "Express", "ChromaDB", "Ollama", "BM25"],
     highlights: ["Document ingestion", "Vector search + BM25", "Cross-encoder reranking", "Citation-based answers"],
   },
@@ -34,7 +34,7 @@ const projects = [
     description:
       "A blog application with a custom backend built using Node.js and Express. Built CRUD operations for users and posts, secure profile management, and performance/security optimizations.",
     Demo: "",
-    Code: "https://github.com/0rigin-c0de/Reactron",
+    Code: "https://github.com/chthonn/Reactron",
     technologies: ["React", "Node.js", "Express", "MongoDB"],
     highlights: ["Custom backend", "CRUD operations", "User profiles", "Security optimizations"],
   },
@@ -95,7 +95,7 @@ function ProjectList() {
 
         <div className="mt-8 flex justify-center">
           <a
-            href="https://github.com/0rigin-c0de?tab=repositories"
+            href="https://github.com/chthonn?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 border border-[#151311] dark:border-[#f0ece4] text-[#151311] dark:text-[#f0ece4] hover:bg-[#151311] hover:text-white dark:hover:bg-[#f0ece4] dark:hover:text-[#151311] font-medium text-sm rounded"

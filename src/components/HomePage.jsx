@@ -42,7 +42,7 @@ function HomePage() {
   const socialLinks = [
     {
       icon: AiFillGithub,
-      url: "https://github.com/0rigin-c0de",
+      url: "https://github.com/chthonn",
       label: "GitHub",
       color: "#333",
     },

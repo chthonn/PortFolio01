@@ -30,13 +30,13 @@ const projects = [
     highlights: ["Document ingestion", "Vector search + BM25", "Cross-encoder reranking", "Citation-based answers"],
   },
   {
-    title: "Reactron",
+    title: "DistributedProxy",
     description:
-      "A blog application with a custom backend built using Node.js and Express. Built CRUD operations for users and posts, secure profile management, and performance/security optimizations.",
+      "A low-level reverse proxy and load balancer built from scratch in Go. Handles raw TCP connection forwarding across backends with automatic failover via ICMP active probing. Implements a custom TCP connection pool to eliminate handshake overhead, an internal DNS cache, and a BPF packet sniffer for wire-level monitoring. Features live metrics for latency, bytes, and connections.",
     Demo: "",
-    Code: "https://github.com/chthonn/Reactron",
-    technologies: ["React", "Node.js", "Express", "MongoDB"],
-    highlights: ["Custom backend", "CRUD operations", "User profiles", "Security optimizations"],
+    Code: "",
+    technologies: ["Go", "TCP/IP", "BPF", "ICMP", "Networking"],
+    highlights: ["Low-level TCP proxy", "Automatic failover", "Connection pooling", "Wire-level monitoring"],
   },
 ];
 
